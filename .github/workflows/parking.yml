@@ -1,0 +1,18 @@
+name: Run Colab
+
+on:
+  schedule:
+    - cron: '* * * * *' # 매 분마다 실행
+
+jobs:
+  run-colab:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run Colab Notebook
+      run: |
+        pip install gdown
+        gdown --id <1E-LT7-pWV8fbohmvj8zr1BhG5IvCa1CL#scrollTo=12cfsQz84oau> -O notebook.ipynb
+        jupyter nbconvert --to notebook --execute notebook.ipynb
