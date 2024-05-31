@@ -1,3 +1,0 @@
-git add .github/workflows/run_colab.yml
-git commit -m "Add GitHub Actions workflow to run Colab notebook every minute"
-git push origin main
